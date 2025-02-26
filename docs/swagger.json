@@ -1,0 +1,63 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Université Internationale de Cocody",
+    "version": "1.0.0",
+    "description": "Documentation de l'API"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Accueil",
+        "responses": {
+          "200": {
+            "description": "Message de bienvenue"
+          }
+        }
+      }
+    },
+    "/students": {
+      "get": {
+        "summary": "Récupère les étudiants",
+        "responses": {
+          "200": {
+            "description": "Liste des étudiants"
+          }
+        }
+      },
+      "post": {
+        "summary": "Crée un nouvel étudiant",
+        "responses": {
+          "200": {
+            "description": "Étudiant créé"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "Récupère un utilisateur par id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Utilisateur récupéré"
+          }
+        }
+      }
+    }
+  }
+}
